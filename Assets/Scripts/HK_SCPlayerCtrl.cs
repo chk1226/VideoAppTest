@@ -89,8 +89,7 @@ public class HK_SCPlayerCtrl : MonoBehaviour
     }
     public void Open()
     {
-        //var videoUrl = GetFilePath();
-        var videoUrl = SCMGR.GetUrlFromSCSCAssets(URL) + ".mp4";
+        var videoUrl = GetFilePath();
         Debug.Log($"[_unity] {videoUrl}");
 
         SCPlayer.Open(MediaType.LocalFile, videoUrl);
@@ -127,8 +126,6 @@ public class HK_SCPlayerCtrl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        return; 
-
         if(FPSCount == 10)
         {
             FPS = RegFPS / FPSCount;
